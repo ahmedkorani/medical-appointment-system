@@ -128,7 +128,6 @@ function ResponsiveAppBar() {
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar
                   alt={user ? user.displayName : "Anonymous"}
-                  src="/static/images/avatar/2.jpg"
                 />
               </IconButton>
             </Tooltip>
