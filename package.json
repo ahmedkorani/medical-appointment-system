@@ -25,7 +25,8 @@
     "react-dom": "^18.3.1",
     "react-google-button": "^0.8.0",
     "react-router-dom": "^6.26.0",
-    "sass": "^1.77.8"
+    "sass": "^1.77.8",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
