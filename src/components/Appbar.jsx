@@ -11,15 +11,18 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import MonitorHeartIcon from "@mui/icons-material/MonitorHeart";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { app } from "../utils/FirebaseConfig";
 import { getAuth } from "firebase/auth";
+import { Switch } from "@mui/material";
+import { AppContext } from "../store/AppProvider";
 
 const pages = ["Services", "Schedule Appointment", "About"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
   const [user, setUser] = useState(null);
+  const { isPatientView, togglePatientView } = useContext(AppContext);
 
   useEffect(() => {
     const auth = getAuth(app);
@@ -123,12 +126,20 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
+          <Typography>
+            {isPatientView ? "Patient View" : "Clinic View"}
+          </Typography>
+          <Switch
+            color="warning"
+            sx={{ mr: "1rem", ml: "1rem" }}
+            checked={isPatientView}
+            onChange={togglePatientView}
+          />
+
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar
-                  alt={user ? user.displayName : "Anonymous"}
-                />
+                <Avatar alt={user ? user.displayName : "Anonymous"} />
               </IconButton>
             </Tooltip>
             <Menu
