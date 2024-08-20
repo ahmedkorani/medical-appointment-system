@@ -114,7 +114,7 @@ export const CalendarComponent = () => {
   }
 
   return (
-    <>
+    <div style={{ marginLeft: "4rem", marginRight: "4rem", height: "100%"}}>
       <Backdrop
         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={isLoading}
@@ -139,6 +139,6 @@ export const CalendarComponent = () => {
         selectMirror={true}
         dayMaxEvents={true}
       />
-    </>
+    </div>
   );
 };
