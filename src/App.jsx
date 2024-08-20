@@ -6,13 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import "./index.css";
-import {
-  Login,
-  RoleSelector,
-  PatientDashboard,
-  ClinicDashboard,
-  Home,
-} from "./routes";
+import { Login, Home } from "./routes";
 import { Box, CircularProgress } from "@mui/material";
 import ResponsiveAppBar from "./components/Appbar";
 import { AppProvider } from "./store/AppProvider";
@@ -49,9 +43,6 @@ const App = () => {
               <Route path="/" element={<Navigate to="/home" />} />
               <Route path="/home" element={<Home />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/role-selector" element={<RoleSelector />} />
-              <Route path="/patient-dashboard" element={<PatientDashboard />} />
-              <Route path="/clinic-dashboard" element={<ClinicDashboard />} />
             </Routes>
           </React.Suspense>
         </Router>
